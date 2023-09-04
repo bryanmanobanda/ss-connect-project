@@ -1,0 +1,6 @@
+.mat-tab-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 48px;
+    width: 100%;
+  }

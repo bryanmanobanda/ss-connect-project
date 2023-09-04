@@ -1,0 +1,21 @@
+*{border: 1px solid blue; margin: 0px; padding: 0px;}
+.page{
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+}
+
+.descripcion{
+    border: 1px solid blue;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.side-person{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: normal;
+    width: 400px;
+}

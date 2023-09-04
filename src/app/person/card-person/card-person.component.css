@@ -1,0 +1,22 @@
+* {
+  border: 1px red solid;
+}
+
+.card {
+  max-width: 420px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: normal;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+div img {
+  border-radius: 15px;
+  margin-left: 5px;
+}
+
+
