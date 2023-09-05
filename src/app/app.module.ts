@@ -8,6 +8,12 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -17,7 +23,17 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    PersonModule, MatButtonModule, MatIconModule, MatToolbarModule
+    PersonModule,
+    MatButtonModule,
+    HttpClientModule, 
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
+    MatIconModule, 
+    MatToolbarModule,
+    RouterModule.forRoot([
+      {path: '', redirectTo:'person-list', pathMatch: 'full'}
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]

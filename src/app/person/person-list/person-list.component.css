@@ -1,0 +1,21 @@
+*{border: 1px solid blue; margin: 0px; padding: 0px;}
+.page{
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+}
+
+.descripcion{
+    width: 100%;
+    margin-left: 0px;
+    background-color: #D0D6E0;
+}
+
+.side-person{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: normal;
+    width: 500px;
+    background-color: rgba(47, 75, 112, 0.79);
+}

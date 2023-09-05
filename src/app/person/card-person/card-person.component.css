@@ -1,22 +1,115 @@
-* {
-  border: 1px red solid;
-}
-
 .card {
-  max-width: 420px;
-  margin-bottom: 8px;
+  width: 426px;
+  height: 193px;
+  position: relative;
+  background-color: rgba(47, 75, 112, 0);
+  border-radius: 50px;
+  margin: 15px;
+  cursor:pointer;
+  border: 0px;
+}
+
+.background {
+  top: 10px;
+  width: 333px;
+  height: 168px;
+  left: 68px;
+  position: absolute;
+  background: #D0D6E0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  border-top: 0.50px black solid;
+  border-right: 0.50px black solid;
+  border-bottom: 0.50px black solid;
+}
+
+.name {
+  left: 160px;
+  top: 21px;
+  position: absolute;
+  color: #003F5C;
+  font-size: 20px;
+  font-family: Roboto;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.avatar > img {
+  width: 134px;
+  height: 128px;
+  left: 14px;
+  top: 31px;
+  position: absolute;
+  border-radius: 15px;
+}
+
+.skills,
+.experience,
+.description {
+  left: 170px;
+  position: absolute;
+  color: black;
+  font-size: 15px;
+  font-family: Lato;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.skills {
+  top: 104px;
+}
+
+.experience {
+  top: 134px;
+}
+
+.description {
+  top: 74px;
+}
+
+.stars {
+  width: 108px;
+  left: 160px;
+  top: 45px;
+  position: absolute;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  color: rgba(255, 255, 0, 0.815);
+}
+
+.badge {
+  width: 24px;
+  left: 159px;
+  top: 71px;
+  position: absolute;
+}
+
+.badge-inner {
+  color: #003F5C;
+}
+
+.ribbon {
+  width: 31px;
+  height: 31px;
+  left: 356px;
+  top: 17px;
+  position: absolute;
+  justify-content: center;
   align-items: center;
-  align-content: normal;
-  cursor: pointer;
-  border-radius: 15px;
+  display: flex;
+  background-color: #003F5C;
+  border-radius: 50%;
 }
 
-div img {
-  border-radius: 15px;
-  margin-left: 5px;
+.ribbon-inner {
+  color: #D0D6E0;
 }
 
+.card:hover {
+  background-color: #2F4B70;
+  backdrop-filter: blur(4px);
+}
 
+.selected {
+  background-color: #2F4B70;
+  backdrop-filter: blur(4px);
+}

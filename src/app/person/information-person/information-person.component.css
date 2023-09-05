@@ -1,0 +1,15 @@
+*{
+    margin: 20px 20px 0px 20px;
+}
+
+mat-card{
+    border: 1px solid red;   
+    border-radius: 15px;
+    background-color: blue;
+}
+.col{
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
