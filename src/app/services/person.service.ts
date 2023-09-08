@@ -9,6 +9,8 @@ export class PersonService {
   
   selectedCardId: string | null = null; 
 
+  selectedCardData: any = null;
+
   constructor(private firestore: AngularFirestore) { }
 
   getPersonas() : Observable<any>{

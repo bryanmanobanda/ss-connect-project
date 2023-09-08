@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./tab-person.component.css']
 })
 export class TabPersonComponent {
-
+  
 }

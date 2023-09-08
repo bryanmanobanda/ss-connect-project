@@ -1,9 +1,29 @@
 <div class="page">
-    <div class="side-person">
-      <app-card-person></app-card-person>
+  <div class="side-person">
+    <app-card-person></app-card-person>
+  </div>
+  <div class="descripcion" *ngIf="selectedCardData">
+    <div class="card">
+      <mat-card class="avatar">
+        <img
+        src="{{selectedCardData.foto? selectedCardData.foto:'https://images.ctfassets.net/cd2ivy5nzajd/66yupScvVbLHn3DfNuUFxn/51931efa2609d2da88644db6d1ed3e96/anonymous-avatar-icon-25.png'}}"
+          alt="Avatar"
+        />
+      </mat-card>
+      <div >
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title class="name">{{selectedCardData.nombre}}</mat-card-title>
+            <mat-card-subtitle class="stars">
+              <ng-container *ngFor="let _ of getStarsArray(selectedCardData.valoracion)">
+                <mat-icon>star</mat-icon>
+              </ng-container>
+            </mat-card-subtitle>
+          </mat-card-title-group>
+        </mat-card-header>
+      </div>
+      <button mat-button class="button-option" routerLinkActive="active" routerLink="/chat-list">Conectar</button>
     </div>
-    <div class="descripcion">
-      <app-card-person></app-card-person>
-      <div><app-tab-person></app-tab-person></div>
-    </div>
+    <app-tab-person></app-tab-person>
+  </div>
 </div>

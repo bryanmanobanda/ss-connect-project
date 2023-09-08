@@ -1,0 +1,21 @@
+<div class="card" [class.selected]="selectedCard === person.id" (click)="toggleSelection(person.id)" *ngFor="let person of personList">
+  <div class="background"></div>
+  <mat-card class="avatar">
+    <img src="{{person.foto? person.foto:'https://images.ctfassets.net/cd2ivy5nzajd/66yupScvVbLHn3DfNuUFxn/51931efa2609d2da88644db6d1ed3e96/anonymous-avatar-icon-25.png'}}" alt="Avatar" />
+  </mat-card>
+  <div>
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title class="name">{{person.nombre}}</mat-card-title>
+        <mat-card-subtitle class="message">
+          <ng-container>
+            Mensaje
+          </ng-container>
+        </mat-card-subtitle>
+      </mat-card-title-group>
+    </mat-card-header>
+  </div>
+  <div class="hora">
+    HORA
+  </div>
+</div>

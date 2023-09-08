@@ -1,0 +1,45 @@
+.position{
+  display: flex;
+  height: 100%;
+  padding-bottom: 50px;
+}
+.my-card.description-card {
+  background-color: #2f4b70;
+  border: 3px solid #d0d6e0;
+  color: #d0d6e0;
+  margin-top: 15px;
+  border-radius: 15px;
+  left: 53px;
+  width: 87%;
+}
+
+.my-card.skills-card {
+  background-color: #2f4b70;
+  border: 3px solid #d0d6e0;
+  margin-top: 15px;
+  border-radius: 15px;
+  color: #d0d6e0;
+  left: 52px;
+  width: 50%;
+}
+
+.my-card.experience-card {
+  background-color: #2f4b70;
+  border: 3px solid #d0d6e0;
+  color: #d0d6e0;
+  border-radius: 15px;
+  margin-top: 15px;
+  left: 79px;
+  width: 34%;
+}
+
+.list-item-with-bullet {
+  list-style-type: disc;
+  margin-left: 0px;
+  color: #d0d6e0;
+  font-size: 15px;
+}
+
+.nodata{
+  margin-left: 15px;
+}

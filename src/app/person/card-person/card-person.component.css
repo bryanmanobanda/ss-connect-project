@@ -35,10 +35,10 @@
 }
 
 .avatar > img {
-  width: 134px;
-  height: 128px;
-  left: 14px;
-  top: 31px;
+  width: 108px;
+  height: 145px;
+  left: 32px;
+  top: 23px;
   position: absolute;
   border-radius: 15px;
 }
@@ -56,15 +56,11 @@
 }
 
 .skills {
-  top: 104px;
+  top: 87px;
 }
 
 .experience {
-  top: 134px;
-}
-
-.description {
-  top: 74px;
+  top: 119px;
 }
 
 .stars {
@@ -79,7 +75,7 @@
 .badge {
   width: 24px;
   left: 159px;
-  top: 71px;
+  top: 85px;
   position: absolute;
 }
 

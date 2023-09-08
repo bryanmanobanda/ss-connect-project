@@ -1,30 +1,28 @@
-<div class="card" [class.selected]="selectedCard === person.id" (click)="toggleSelection(person.id)" *ngFor="let person of personList">
-  <div class="background"></div>
-      <mat-card class="avatar">
-        <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Avatar" />
-      </mat-card>
-    <div>
-        <mat-card-header>
-          <mat-card-title-group>
-            <mat-card-title class="name">{{person.nombre}}</mat-card-title>
-            <mat-card-subtitle class="stars">
-              <ng-container *ngFor="let _ of getStarsArray(person.valoracion)">
-                <mat-icon>star</mat-icon>
-              </ng-container>
-            </mat-card-subtitle>
-          </mat-card-title-group>
-        </mat-card-header>
-        <div class="badge">
-          <mat-icon class="badge-inner">star</mat-icon>
-          <mat-icon class="badge-inner">star</mat-icon>
-          <mat-icon class="badge-inner">star</mat-icon>
+  <div class="card" [class.selected]="selectedCard === person.id" (click)="toggleSelection(person.id)" *ngFor="let person of personList">
+    <div class="background"></div>
+        <mat-card class="avatar">
+          <img src="{{person.foto? person.foto:'https://images.ctfassets.net/cd2ivy5nzajd/66yupScvVbLHn3DfNuUFxn/51931efa2609d2da88644db6d1ed3e96/anonymous-avatar-icon-25.png'}}" alt="Avatar" />
+        </mat-card>
+      <div>
+          <mat-card-header>
+            <mat-card-title-group>
+              <mat-card-title class="name">{{person.nombre}}</mat-card-title>
+              <mat-card-subtitle class="stars">
+                <ng-container *ngFor="let _ of getStarsArray(person.valoracion)">
+                  <mat-icon>star</mat-icon>
+                </ng-container>
+              </mat-card-subtitle>
+            </mat-card-title-group>
+          </mat-card-header>
+          <div class="badge">
+            <mat-icon class="badge-inner">favorite</mat-icon>
+            <mat-icon class="badge-inner">business</mat-icon>
+        </div>
+          <mat-card-content class="skills"> {{ person.habilidades!="" ? person.habilidades.slice(0,1) +' y más.': 'Sin habilidades' }} </mat-card-content>
+          <mat-card-content class="experience"> {{ person.experiencia ? person.experiencia.slice(0, 1) + ' y más.' : 'Sin experiencia' }} </mat-card-content>
       </div>
-        <mat-card-content class="description"> Descripción </mat-card-content>
-        <mat-card-content class="skills"> Skills </mat-card-content>
-        <mat-card-content class="experience"> Experiencia </mat-card-content>
-    </div>
-    <div class="ribbon">
-      <mat-icon class="ribbon-inner">star</mat-icon>
-    </div>
-</div>
+      <div class="ribbon">
+        <mat-icon class="ribbon-inner">keyboard_arrow_right</mat-icon>
+      </div>
+  </div>
 <mat-progress-bar mode="indeterminate" *ngIf="!personList"></mat-progress-bar>

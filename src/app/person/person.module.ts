@@ -9,9 +9,7 @@ import { PersonListComponent } from './person-list/person-list.component';
 import { InformationPersonComponent } from './information-person/information-person.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-
-
-
+import { AboutPersonComponent } from './about-person/about-person.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +17,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     TabPersonComponent,
     PersonListComponent,
     InformationPersonComponent,
+    AboutPersonComponent,
   ],
   imports: [
     CommonModule, MatCardModule, MatTabsModule, MatIconModule, MatProgressBarModule, RouterModule.forChild([

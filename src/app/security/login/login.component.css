@@ -1,0 +1,125 @@
+.estructura {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .logo{
+    margin: 15px 0px 0px 15px
+  }
+  
+  .container {
+    width: 1131px;
+    height: 100%;
+    background-color: rgba(47, 75, 112, 0.79);
+  }
+  
+  .image {
+    width: 508px;
+    height: 508px;
+    border-radius: 50%;
+    position: absolute;
+    left: 45px;
+    top: 13%;
+    background: #003F5C;
+  }
+  
+  .title {
+    color: #003f5c;
+    font-size: 40px;
+    font-family: Roboto;
+    font-weight: 700;
+    word-wrap: break-word;
+    margin-top: 30px;
+  }
+  
+  .text-help {
+    color: #2f4b70;
+    font-size: 21px;
+    font-family: Roboto;
+    margin-right: 20px;
+  }
+  
+  .subtitle{
+    color: #2f4b70;
+    font-size: 25px;
+    font-family: Roboto;
+    font-weight: 400;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    }
+  
+  .registration-card {
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(208, 214, 224, 0.79);
+  }
+  
+  .form-design{
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .button-option{
+      border: 1px #1A2D68 solid;
+      background-color: #1A2D68;
+      color: white;
+      border-radius: 25px;
+      height: 44px;
+      width: 204px;
+      font-size: 24px;
+      font-family: Roboto;
+      cursor: pointer;
+      margin-top: 55px;
+      margin-left: 111px;
+  }
+  
+  .button-option:hover{
+      background-color: #12204b;
+      color: white;
+  }
+  
+  .btn-login{
+      display: flex;
+      justify-content: flex-end;
+  }
+  
+  .btn-login > button{
+      background-color: rgba(237, 102, 102, 0);
+      border: 1px #1A2D68 solid;
+      color: #003f5c;
+      border-radius: 25px;
+      height: 40px;
+      width: 155px;
+      font-size: 21px;
+      font-family: Roboto;
+      cursor: pointer;
+  }
+  
+  .btn-login>button:hover{
+      background-color: #1A2D68;
+      color: white;
+  }
+  
+  mat-form-field{
+      margin-top: 10px;
+      margin-left: 100px;
+      width: 76%;
+  }
+
+mat-hint{
+  position: absolute;
+  color: red;
+  top: -18px;
+  font-size: 15px;
+}
+
+.move{
+  position: absolute;
+  left: 600px;
+  top: 80px;
+}

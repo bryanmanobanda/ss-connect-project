@@ -1,0 +1,77 @@
+.card {
+    width: 387px;
+    height: 148px;
+    position: relative;
+    background-color: rgba(47, 75, 112, 0);
+    border-radius: 50px;
+    margin: 15px;
+    cursor:pointer;
+    border: 0px;
+  }
+  
+  .background {
+    top: 10px;
+    width: 333px;
+    height: 121px;
+    left: 28px;
+    position: absolute;
+    background: #D0D6E0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    border-top: 0.50px black solid;
+    border-right: 0.50px black solid;
+    border-bottom: 0.50px black solid;
+  }
+  
+  .name {
+    left: 133px;
+    top: 28px;
+    position: absolute;
+    color: #003F5C;
+    font-size: 20px;
+    font-family: Roboto;
+    font-weight: 700;
+    word-wrap: break-word;
+  }
+  
+  .avatar > img {
+    width: 73px;
+    height: 108px;
+    left: 42px;
+    top: 17px;
+    position: absolute;
+    border-radius: 15px;
+  }
+  
+  .message {
+    top: 61px;
+    width: 108px;
+    left: 133px;
+    position: absolute;
+    color: black;
+    font-size: 20px;
+    font-family: Lato;
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+
+  .hora {
+    width: 31px;
+    height: 31px;
+    left: 309px;
+    top: 24px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  
+  .card:hover {
+    background-color: #2F4B70;
+    backdrop-filter: blur(4px);
+  }
+  
+  .selected {
+    background-color: #2F4B70;
+    backdrop-filter: blur(4px);
+  }

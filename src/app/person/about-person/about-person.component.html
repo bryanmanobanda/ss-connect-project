@@ -1,0 +1,36 @@
+<div *ngIf="selectedCardData">
+  <mat-card class="my-card description-card">
+    <mat-card-header>
+      <mat-card-title>Descripción</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      {{ selectedCardData.descripcion ? selectedCardData.descripcion: 'No se a indicado ninguna descripción.' }}
+    </mat-card-content>
+  </mat-card>
+
+  <div class="position">
+    <mat-card class="my-card skills-card">
+      <mat-card-header>
+        <mat-card-title>Habilidades</mat-card-title>
+      </mat-card-header>
+        <mat-card-content *ngFor="let h of selectedCardData.habilidades">
+          <ul>
+            <li class="list-item-with-bullet">{{h}}</li>
+          </ul>
+        </mat-card-content>
+      <div class="nodata" *ngIf="selectedCardData.habilidades==''">No se ha indicado ninguna habilidad.</div>
+    </mat-card>
+  
+    <mat-card class="my-card experience-card">
+      <mat-card-header>
+        <mat-card-title>Experiencia</mat-card-title>
+      </mat-card-header>
+        <mat-card-content *ngFor="let e of selectedCardData.experiencia">
+          <ul>
+            <li class="list-item-with-bullet">{{e}}</li>
+          </ul>
+        </mat-card-content>
+      <div class="" *ngIf="selectedCardData.experiencia==''">No se ha indicado ninguna experiencia.</div>
+    </mat-card>
+  </div>
+</div>

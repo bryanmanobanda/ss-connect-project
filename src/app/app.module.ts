@@ -14,6 +14,10 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment';
+import { ChatModule } from './chat/chat.module';
+import { SecurityModule } from './security/security.module';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +28,9 @@ import { environment } from 'src/environments/environment';
     BrowserModule,
     BrowserAnimationsModule,
     PersonModule,
+    ChatModule,
+    MatMenuModule,
+    SecurityModule,
     MatButtonModule,
     HttpClientModule, 
     AngularFireModule.initializeApp(environment.firebase),
@@ -32,7 +39,8 @@ import { environment } from 'src/environments/environment';
     MatIconModule, 
     MatToolbarModule,
     RouterModule.forRoot([
-      {path: '', redirectTo:'person-list', pathMatch: 'full'}
+      {path: '', redirectTo:'register', pathMatch: 'full'},
+      {path: '**', redirectTo:'register', pathMatch: 'full'}
     ]),
   ],
   providers: [],
