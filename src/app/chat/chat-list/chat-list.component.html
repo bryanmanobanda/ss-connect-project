@@ -2,37 +2,38 @@
   <div class="side-person">
     <app-chat-card></app-chat-card>
   </div>
-  <div class="descripcion">
-    <div class="card">
-      <div>
-        <mat-card-header>
-          <mat-card-title-group>
-            <mat-card-content class="name"
-              >Lorem Ipsum es simplemente el texto de relleno de las imprentas y
-              archivos Lorem Ipsum es simplemente el texto de relleno de las
-              imprentas y archivos Lorem Ipsum es simplem el texto de relleno de
-              las imprentas y archivos Lorem Ipsum es lemente el texto de
-              relleno de las imprentas y archivos Lorem Ipsum es te el texto de
-              relleno de las imprentas y archivos</mat-card-content
-            >
-          </mat-card-title-group>
-        </mat-card-header>
-        <mat-card-content class="hora">Hora</mat-card-content>
+
+    <div class="contenedor" *ngIf="selectedCardData">
+      <div class="descripcion" *ngFor="let message of myMessages" [ngClass]="{ 'sender':message.senderId === getCurrentUser?.uid}">
+        <div class="card">
+          <div class="name">
+            <mat-card-header>
+              <mat-card-title-group>
+                <mat-card-content>
+                  {{message.text}}
+                  </mat-card-content
+                >
+              </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content class="hora">{{message.sentDate | date : 'shortTime'}}</mat-card-content>
+          </div>
+        </div>
       </div>
+      <mat-card-content class="barramensaje">      
+        <form class="chat-text" [formGroup]="chatListControl">
+          <mat-form-field class="message-input">
+            <textarea [formControl]="message" (keydown.enter)="sendMessage()"
+              autocapitalize="sentences"
+              rows="5"
+              matInput
+              placeholder="Escribe un mensaje"
+              formControlName="message"
+            ></textarea>
+          </mat-form-field>
+          <button mat-button class="button-option" (click)="sendMessage()">
+            <mat-icon>send</mat-icon>
+          </button>
+        </form>
+      </mat-card-content>
     </div>
-    <form class="chat-text">
-      <mat-form-field class="message-input">
-        <textarea
-          autocapitalize="sentences"
-          rows="5"
-          matInput
-          placeholder="Escribe un mensaje"
-          formControlName="message"
-        ></textarea>
-      </mat-form-field>
-      <button mat-button class="button-option">
-        <mat-icon>send</mat-icon>
-      </button>
-    </form>
-  </div>
 </div>

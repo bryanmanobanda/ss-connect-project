@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { take, Subject, Observable } from 'rxjs';
+import { take, Subject, Observable, Subscription } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { PersonService } from 'src/app/services/person.service';
 
@@ -13,7 +13,7 @@ export class CardPersonComponent implements OnInit, OnDestroy {
 
   personList: any[] = [];
 
-  persona: Observable<any>;
+  persona: Subscription;
 
   person: any[] = [];
 
@@ -27,21 +27,23 @@ export class CardPersonComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.personService.selectedCardData = null;
+    this.persona.unsubscribe();
   }
 
   getPersonas() {
-    this.persona = this.personService.getPersonas();
-    this.persona.pipe(
+    this.persona = this.personService.getPersonas()
+    .pipe(
       take(1)
     ).subscribe({
       next: (data) => {
         this.personList = [];
         data.forEach((element: any) => {
-          this.personList.push({
-            id: element.payload.doc.id,
-            ...element.payload.doc.data(),
-          });
+          if(element.payload.doc.id != this.authService.userData.uid){
+            this.personList.push({
+              id: element.payload.doc.id,
+              ...element.payload.doc.data(),
+            });
+          }
         });
       },
       complete: () =>{

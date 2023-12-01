@@ -45,7 +45,7 @@
   
   .message {
     top: 61px;
-    width: 108px;
+    width: 50%;
     left: 133px;
     position: absolute;
     color: black;
@@ -56,9 +56,8 @@
   }
 
   .hora {
-    width: 31px;
     height: 31px;
-    left: 309px;
+    left: 285px;
     top: 24px;
     position: absolute;
     justify-content: center;

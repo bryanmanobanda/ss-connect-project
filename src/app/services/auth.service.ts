@@ -3,7 +3,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -21,13 +21,17 @@ export class AuthService {
     this.authFire.authState.subscribe((user) => {
       if (user) {
         this.userData = user;
-        this.userSubject$.next(this.userData); //progamacion reactiva
+        this.userSubject$.next(this.userData);
         localStorage.setItem('user', JSON.stringify(user));
       } else {
         this.userSubject$.next(null);
         localStorage.removeItem('user');
       }
     });
+  }
+
+  currentUser(): Observable<any>{
+    return this.authFire.authState;
   }
 
   login(email: string, password: string){
@@ -47,8 +51,7 @@ export class AuthService {
     return this.authFire
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
-        this.storeUserData(result.user, nombre);
-        this.router.navigate(['/login'])
+        this.storeUserData(result.user, nombre, password);
       })
       .catch((error) => {this.toastr.error(this.firebaseError(error.code),'Error')});
   }
@@ -65,7 +68,7 @@ export class AuthService {
     });
   }
 
-  storeUserData(user: any, nombre: string) {
+  storeUserData(user: any, nombre: string, password:string) {
     this.firestore
       .collection('user')
       .doc(user.uid)
@@ -84,6 +87,7 @@ export class AuthService {
           'La cuenta fue registrada existosamente!',
           'Usuario Registrado'
         );
+        this.login(user.email, password);
       });
   }
 

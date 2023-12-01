@@ -7,6 +7,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import { authControlGuard } from '../guards/auth-control.guard';
 
 @NgModule({
   declarations: [ChatCardComponent, ChatListComponent],
@@ -16,8 +18,9 @@ import { MatInputModule } from '@angular/material/input';
     MatInputModule,
     MatIconModule,
     MatProgressBarModule,
+    ReactiveFormsModule,
     RouterModule.forChild([
-      { path: 'chat-list', component: ChatListComponent },
+      { path: 'chat-list', component: ChatListComponent},
     ]),
   ],
 })

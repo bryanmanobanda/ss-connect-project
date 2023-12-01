@@ -1,0 +1,140 @@
+.page {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+  }
+  
+  .descripcion {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0px;
+    background-color: rgba(208, 214, 224, 0.79);
+  }
+  
+  .side-person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: normal;
+    width: 500px;
+    height: 100vh;
+    background-color: rgba(47, 75, 112, 0.79);
+  }
+  
+  .card {
+    display: flex;
+    align-items: center;
+    padding-top: 23px;
+    flex-direction: column;
+    border-radius: 15px;
+    width: 400px;
+    height: 485px;
+    margin: 12px 40px 10px 40px;
+    background-color: #183548;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-top: 0.5px black solid;
+    border-right: 0.5px black solid;
+    border-bottom: 0.5px black solid;
+  }
+  
+  .name {
+    color: #d0d6e0;
+    font-size: 25px;
+    font-family: Roboto;
+    font-weight: 700;
+    word-wrap: break-word;
+  }
+
+  .puntos {
+    color: #d0d6e0;
+    font-size: 25px;
+    font-family: Roboto;
+    font-weight: 700;
+    word-wrap: break-word;
+  }
+  
+  .avatar > img {
+    width: 264px;
+    height: 412px;
+    border-radius: 15px;
+  }
+  
+  .stars {
+    color: rgba(255, 255, 0, 0.815);
+  }
+  
+  .stars > mat-icon {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .button-option{
+    border: 1px black solid;
+    background-color: #111932;
+    color: white;
+    border-radius: 25px;
+    height: 44px;
+    width: 204px;
+    font-size: 24px;
+    font-family: Roboto;
+    cursor: pointer;
+    margin: 15px;
+  }
+  
+  .button-option:hover{
+    background-color: rgb(3 13 43);
+    color: white;
+  }
+
+  .direccion{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .position{
+    display: flex;
+    height: 100%;
+    padding-bottom: 50px;
+  }
+  .my-card.description-card {
+    background-color: #2f4b70;
+    border: 3px solid #d0d6e0;
+    color: #d0d6e0;
+    margin-top: 15px;
+    border-radius: 15px;
+    left: 53px;
+    width: 87%;
+  }
+  
+  .my-card.skills-card {
+    background-color: #2f4b70;
+    border: 3px solid #d0d6e0;
+    margin-top: 15px;
+    border-radius: 15px;
+    color: #d0d6e0;
+    left: 52px;
+    width: 50%;
+  }
+  
+  .my-card.experience-card {
+    background-color: #2f4b70;
+    border: 3px solid #d0d6e0;
+    color: #d0d6e0;
+    border-radius: 15px;
+    margin-top: 15px;
+    left: 79px;
+    width: 34%;
+  }
+  
+  .list-item-with-bullet {
+    list-style-type: disc;
+    margin-left: 0px;
+    color: #d0d6e0;
+    font-size: 15px;
+  }
+  
+  .nodata{
+    margin-left: 15px;
+  } 

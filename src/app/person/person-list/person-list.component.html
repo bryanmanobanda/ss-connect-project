@@ -15,14 +15,14 @@
           <mat-card-title-group>
             <mat-card-title class="name">{{selectedCardData.nombre}}</mat-card-title>
             <mat-card-subtitle class="stars">
-              <ng-container *ngFor="let _ of getStarsArray(selectedCardData.valoracion)">
+              <ng-container *ngFor="let _ of getStarsArray(selectedCardData.valoraion)">
                 <mat-icon>star</mat-icon>
               </ng-container>
             </mat-card-subtitle>
           </mat-card-title-group>
         </mat-card-header>
       </div>
-      <button mat-button class="button-option" routerLinkActive="active" routerLink="/chat-list">Conectar</button>
+      <button mat-button class="button-option" (click)="createChat()">Conectar</button>
     </div>
     <app-tab-person></app-tab-person>
   </div>

@@ -1,0 +1,75 @@
+<div class="page" *ngIf="selectedCardData">
+    <div class="side-person">
+        <div class="card">
+            <mat-card class="avatar">
+              <img
+              src="{{selectedCardData.foto? selectedCardData.foto:'https://images.ctfassets.net/cd2ivy5nzajd/66yupScvVbLHn3DfNuUFxn/51931efa2609d2da88644db6d1ed3e96/anonymous-avatar-icon-25.png'}}"
+                alt="Avatar"
+              />
+            </mat-card>
+            <div >
+              <mat-card-header>
+                <mat-card-title-group>
+                  <mat-card-title class="name">{{ selectedCardData.nombre }}</mat-card-title>
+                </mat-card-title-group>
+              </mat-card-header>
+            </div>
+        </div>
+        <div >
+          <mat-card-header>
+            <mat-card-title-group>
+              <mat-card-title class="puntos">Puntuación</mat-card-title>
+              <mat-card-subtitle class="stars" >
+                <ng-container *ngFor="let _ of getStarsArray(selectedCardData.valoraion)">
+                  <mat-icon>star</mat-icon>
+                </ng-container>
+              </mat-card-subtitle>
+            </mat-card-title-group>
+          </mat-card-header>
+        </div>
+</div>
+<form class="descripcion" [formGroup]="loginForm" (ngSubmit)="submit()">  
+  <mat-tab-group mat-stretch-tabs="true" mat-align-tabs="center">
+    <mat-tab  label="¿Quién soy?">
+      <div *ngIf="selectedCardData">
+        <mat-card class="my-card description-card">
+          <mat-card-header>
+            <mat-card-title>Descripción</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            {{ selectedCardData.descripcion ? selectedCardData.descripcion: 'No se a indicado ninguna descripción.' }}
+          </mat-card-content>
+        </mat-card>
+      
+        <div class="position">
+          <mat-card class="my-card skills-card">
+            <mat-card-header>
+              <mat-card-title>Habilidades</mat-card-title>
+            </mat-card-header>
+            <mat-card-content *ngFor="let h of selectedCardData.habilidades">
+              <ul>
+                    <li class="list-item-with-bullet">{{h}}</li>
+                  </ul>
+                </mat-card-content>
+                <div class="nodata" *ngIf="selectedCardData.habilidades==''">No se ha indicado ninguna habilidad.</div>
+          </mat-card>
+        
+          <mat-card class="my-card experience-card">
+            <mat-card-header>
+              <mat-card-title>Experiencia</mat-card-title>
+            </mat-card-header>
+              <mat-card-content *ngFor="let e of selectedCardData.experiencia">
+                <ul>
+                  <li class="list-item-with-bullet">{{e}}</li>
+                </ul>
+              </mat-card-content>
+            <textarea class="experience-card" *ngIf="selectedCardData.experiencia==''" disabled>No se ha indicado ninguna experiencia.</textarea>
+          </mat-card>
+        </div>
+      </div>
+      
+    </mat-tab>
+  </mat-tab-group>
+  </form>
+  </div>
+  

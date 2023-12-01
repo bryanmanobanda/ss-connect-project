@@ -6,22 +6,24 @@ import { TabPersonComponent } from './tab-person/tab-person.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { RouterModule } from '@angular/router';
 import { PersonListComponent } from './person-list/person-list.component';
-import { InformationPersonComponent } from './information-person/information-person.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { AboutPersonComponent } from './about-person/about-person.component';
+import { ProfileUserComponent } from './profile-user/profile-user.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { authControlGuard } from '../guards/auth-control.guard';
 
 @NgModule({
   declarations: [
     CardPersonComponent,
     TabPersonComponent,
     PersonListComponent,
-    InformationPersonComponent,
     AboutPersonComponent,
+    ProfileUserComponent,
   ],
   imports: [
-    CommonModule, MatCardModule, MatTabsModule, MatIconModule, MatProgressBarModule, RouterModule.forChild([
-      {path: 'person-list', component:PersonListComponent}
+    CommonModule, ReactiveFormsModule, MatCardModule, MatTabsModule, MatIconModule, MatProgressBarModule, RouterModule.forChild([
+      {path: 'person-list', component:PersonListComponent}, {path: 'profile', component:ProfileUserComponent}
     ]),
   ]
 })

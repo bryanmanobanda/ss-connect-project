@@ -8,7 +8,7 @@
             <mat-card-title-group>
               <mat-card-title class="name">{{person.nombre}}</mat-card-title>
               <mat-card-subtitle class="stars">
-                <ng-container *ngFor="let _ of getStarsArray(person.valoracion)">
+                <ng-container *ngFor="let _ of getStarsArray(person.valoraion)">
                   <mat-icon>star</mat-icon>
                 </ng-container>
               </mat-card-subtitle>
@@ -18,8 +18,8 @@
             <mat-icon class="badge-inner">favorite</mat-icon>
             <mat-icon class="badge-inner">business</mat-icon>
         </div>
-          <mat-card-content class="skills"> {{ person.habilidades!="" ? person.habilidades.slice(0,1) +' y más.': 'Sin habilidades' }} </mat-card-content>
-          <mat-card-content class="experience"> {{ person.experiencia ? person.experiencia.slice(0, 1) + ' y más.' : 'Sin experiencia' }} </mat-card-content>
+          <mat-card-content class="skills"> {{ person.habilidades!=[] ? person.habilidades.slice(0,1) +' y más.': 'Sin habilidades' }} </mat-card-content>
+          <mat-card-content class="experience"> {{ person.experiencia!=[] ? person.experiencia.slice(0, 1) + ' y más.' : 'Sin experiencia' }} </mat-card-content>
       </div>
       <div class="ribbon">
         <mat-icon class="ribbon-inner">keyboard_arrow_right</mat-icon>

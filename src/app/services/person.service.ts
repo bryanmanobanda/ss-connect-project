@@ -14,6 +14,15 @@ export class PersonService {
   constructor(private firestore: AngularFirestore) { }
 
   getPersonas() : Observable<any>{
-    return this.firestore.collection('Usuario').snapshotChanges();
+    return this.firestore.collection('user').snapshotChanges();
+  }
+
+  getUserByUid(uid: string): Observable<any> {
+    return this.firestore.collection('user').doc(uid).valueChanges();
+  }
+
+  getChat(documentId: string) : Observable<any>{
+    return this.firestore.collection('chat').doc(documentId).get();
+
   }
 }

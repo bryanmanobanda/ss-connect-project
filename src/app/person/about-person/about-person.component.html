@@ -30,7 +30,7 @@
             <li class="list-item-with-bullet">{{e}}</li>
           </ul>
         </mat-card-content>
-      <div class="" *ngIf="selectedCardData.experiencia==''">No se ha indicado ninguna experiencia.</div>
+      <textarea class="experience-card" *ngIf="selectedCardData.experiencia==''" disabled>No se ha indicado ninguna experiencia.</textarea>
     </mat-card>
   </div>
 </div>

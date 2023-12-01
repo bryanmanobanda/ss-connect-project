@@ -61,6 +61,7 @@
 
 .experience {
   top: 119px;
+  width: fit-content;
 }
 
 .stars {
